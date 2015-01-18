@@ -1,0 +1,26 @@
+{
+  "name": "htmlhint-cli",
+  "version": "1.0.0",
+  "description": "A command line interface for HTMLHint",
+  "main": "htmlhint.js",
+  "bin": {
+    "htmlhint": "./htmlhint"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mundizzle/htmlhint-cli"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mundizzle/htmlhint-cli/issues"
+  },
+  "homepage": "https://github.com/mundizzle/htmlhint-cli",
+  "dependencies": {
+    "glob-all": "^3.0.1",
+    "minimist": "^1.1.0"
+  }
+}
