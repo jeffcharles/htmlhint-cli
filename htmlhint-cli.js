@@ -25,15 +25,18 @@ module.exports = function(){
 
   var args = require('minimist')(process.argv.slice(2));
   var ext = args.ext || 'html';
+  var hasAtLeastOneError = false;
   glob.sync(args.html + '/**/*.' + ext).forEach(function(file){
     var source = fs.readFileSync(file, 'utf-8');
     var report = HTMLHint.verify(source, rules);
     if(report.length){
+      hasAtLeastOneError = true;
       console.log('HTML errors in', file);
       report.forEach(function(message){
         console.log('line', message.line+',', message.type+':', message.message);
       });
     }
   });
+  process.exit(hasAtLeastOneError ? 1 : 0);
 
 };
